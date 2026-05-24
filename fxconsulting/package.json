@@ -11,9 +11,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.1.6",
     "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource-variable/manrope": "^5.2.8",
     "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "wrangler": "^3.57.0"
   }
 }

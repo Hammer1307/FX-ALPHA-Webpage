@@ -142,6 +142,8 @@ Root `/` is a language picker that auto-redirects based on browser language.
 5. **Formspree** dashboard: allow your live domain (and Cloudflare preview domain during testing)
 6. **Submit sitemap** to Google Search Console and Bing Webmaster Tools
 
+
+MIT
 ## License
 
 Proprietary. © FX Alpha eBusiness Consulting GmbH.

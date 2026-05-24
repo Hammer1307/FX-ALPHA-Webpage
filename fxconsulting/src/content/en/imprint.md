@@ -19,7 +19,7 @@ Registered with the District Court of Wiesbaden
 Registration number: HRB 33846
 
 **VAT identification number pursuant to § 27a UStG:**
-*[to be added, if applicable]*
+DE359815036
 
 ## Contact
 

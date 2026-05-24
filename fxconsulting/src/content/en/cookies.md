@@ -27,9 +27,9 @@ Further cookies are set **only** when you actively use the contact form — in t
 
 As this website uses only technically necessary cookies, no prior consent is required under § 25 (2) no. 2 TTDSG (German Telecommunications Telemedia Data Protection Act). For this reason, you will not see a cookie banner.
 
-## Note on Google Fonts
+## Note on fonts
 
-This website loads fonts from Google Fonts. **No cookies are set in this context**, but your IP address is transmitted to Google servers when fonts are loaded. Details on this processing can be found in our [privacy policy](/en/privacy/), section 6.
+The fonts used on this website (Archivo, Manrope, JetBrains Mono) are **served locally from our own server**. There is no connection to Google Fonts or any external font service, **no cookies are set** and **no IP address is transmitted to third parties**. See our [privacy policy](/en/privacy/), section 6, for details.
 
 ## Controlling cookies
 

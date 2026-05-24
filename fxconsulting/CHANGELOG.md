@@ -5,6 +5,51 @@ Aktuelle Version steht ganz oben.
 
 ---
 
+## 2026-05-24_14-08
+
+**Status:** Google Fonts auf Selbst-Hosting umgestellt, USt-ID im Impressum ergänzt.
+
+### Schriftarten jetzt vollständig lokal
+
+Die Schriftarten Archivo, Manrope und JetBrains Mono werden nicht mehr von `fonts.googleapis.com` geladen, sondern als Variable-Font-WOFF2-Dateien vom eigenen Server ausgeliefert.
+
+**Technische Umsetzung:**
+- Drei neue Dev-Dependencies in `package.json`: `@fontsource-variable/archivo`, `@fontsource-variable/manrope`, `@fontsource-variable/jetbrains-mono`
+- `src/styles/global.css`: `@import`-Statements am Anfang
+- `src/layouts/BaseLayout.astro`: Google-Fonts-`<link>`-Tags und `preconnect` entfernt
+
+**Build-Output:** 13 WOFF2-Dateien in `/_astro/`, automatisch gehasht und mit Cache-Control aus `_headers` versorgt. Browser lädt nur das passende Subset (typischerweise nur `latin`).
+
+**Folge für Datenschutz:**
+- Keine IP-Übermittlung mehr an Google beim Laden der Schriftarten
+- Drittland-Übermittlung (USA) für Fonts entfällt vollständig
+- Bekannte DSGVO-Problemquelle (vgl. LG München 20.01.2022) eliminiert
+
+### Inhaltliche Anpassungen
+
+**Datenschutzerklärung (DE + EN):**
+- Abschnitt 6 „Schriftarten" komplett umgeschrieben: „selbst gehostet, keine Datenübertragung an Dritte"
+- Drittland-Übermittlung für Fonts aus dem Text entfernt
+
+**Cookie-Hinweis (DE + EN):**
+- „Hinweis zu Google Fonts" → „Hinweis zu Schriftarten" (selbst gehostet)
+- Klarstellung: keine externen Schriftarten-Dienste, keine Cookies, keine IP-Übermittlung
+
+**Impressum (DE + EN):**
+- Umsatzsteuer-Identifikationsnummer eingetragen: **DE359815036**
+
+### Build
+
+23 Pages, sauber. Externe Font-Requests verifiziert auf 0.
+
+### Was jetzt verbleibt für die anwaltliche Prüfung
+
+Eine der drei Knackpunkte vom letzten Mal (Google Fonts) ist damit erledigt. Übrig:
+- **Formspree (USA)** als Auftragsverarbeiter für das Kontaktformular — Anwalt prüfen lassen
+- Allgemeine Durchsicht von Impressum, Datenschutz, Disclaimer, Cookie-Hinweis durch Fachanwalt für IT-/Internetrecht
+
+---
+
 ## 2026-05-24_13-48
 
 **Status:** Legal-Seiten, og-image, kleine Frontpage-Anpassung.

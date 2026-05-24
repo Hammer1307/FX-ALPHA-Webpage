@@ -4,7 +4,7 @@ Multi-page Astro site for **FX Alpha eBusiness Consulting GmbH** (`fxconsulting.
 
 Multilingual (DE + EN) with separate URLs per language for proper international SEO. Content is written in Markdown, fully separated from the layout components. Builds to static HTML/CSS/JS — deploys anywhere that hosts static files.
 
-**Current version:** `2026-05-24_13-48` — see [CHANGELOG.md](./CHANGELOG.md)
+**Current version:** `2026-05-24_14-08` — see [CHANGELOG.md](./CHANGELOG.md)
 
 ## Versioning convention
 

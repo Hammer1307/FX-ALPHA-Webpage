@@ -19,7 +19,7 @@ Eingetragen im Handelsregister beim Amtsgericht Wiesbaden
 Registernummer: HRB 33846
 
 **Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:**
-*[bitte ergänzen, falls vorhanden]*
+DE359815036
 
 ## Kontakt
 

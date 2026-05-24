@@ -1,3 +1,8 @@
+/* Self-hosted variable fonts — no Google Fonts request, no IP transfer */
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/jetbrains-mono";
+
 :root{
     --bg:#ffffff;
     --bg-2:#f4f7fb;

@@ -33,7 +33,7 @@ const altLocale = lang === 'de' ? 'en_US' : 'de_DE';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a1e3a" />
-  <meta name="x-version" content="2026-05-24_13-48" />
+  <meta name="x-version" content="2026-05-24_14-08" />
 
   <title>{title}</title>
   <meta name="description" content={description} />
@@ -63,11 +63,6 @@ const altLocale = lang === 'de' ? 'en_US' : 'de_DE';
   <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
 
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <slot name="head" />
 </head>

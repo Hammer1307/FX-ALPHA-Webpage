@@ -59,12 +59,9 @@ This website is delivered via Cloudflare Pages. Provider: Cloudflare, Inc., 101 
 **Legal basis:** Art. 6 (1) lit. f GDPR.
 **Further information:** [www.cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/)
 
-## 6. Fonts (Google Fonts)
+## 6. Fonts (self-hosted)
 
-This website uses fonts from Google Fonts (provider: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland). When the website is loaded, fonts are loaded from a Google server, which transmits your IP address to Google.
-
-**Legal basis:** Art. 6 (1) lit. f GDPR (legitimate interest in a consistent visual presentation).
-**Note:** On request, we will self-host the fonts so that no data transfer to Google occurs. Please contact us if you have concerns.
+This website uses the fonts Archivo, Manrope and JetBrains Mono. These fonts are **served exclusively from our own server** and are not loaded from external services such as Google Fonts. No data is transferred to third parties when fonts are loaded.
 
 ## 7. Contact form and email
 

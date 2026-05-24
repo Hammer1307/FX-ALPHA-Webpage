@@ -27,9 +27,9 @@ Weitere Cookies werden **nur dann** gesetzt, wenn Sie aktiv das Kontaktformular 
 
 Da diese Webseite ausschließlich technisch notwendige Cookies verwendet, ist gemäß § 25 Abs. 2 Nr. 2 TTDSG (Telekommunikation-Telemedien-Datenschutz-Gesetz) keine vorherige Einwilligung erforderlich. Sie sehen daher kein Cookie-Banner.
 
-## Hinweis zu Google Fonts
+## Hinweis zu Schriftarten
 
-Diese Webseite lädt Schriftarten von Google Fonts. **Dabei werden keine Cookies gesetzt**, jedoch wird Ihre IP-Adresse beim Laden der Schriftarten an Server von Google übermittelt. Details zu dieser Verarbeitung finden Sie in unserer [Datenschutzerklärung](/de/datenschutz/), Abschnitt 6.
+Die auf dieser Webseite verwendeten Schriftarten (Archivo, Manrope, JetBrains Mono) werden **lokal von unserem eigenen Server** ausgeliefert. Es findet keine Verbindung zu Google Fonts oder anderen externen Schriftarten-Diensten statt, es werden **keine Cookies gesetzt** und **keine IP-Adresse an Dritte übermittelt**. Details siehe [Datenschutzerklärung](/de/datenschutz/), Abschnitt 6.
 
 ## Cookies kontrollieren
 

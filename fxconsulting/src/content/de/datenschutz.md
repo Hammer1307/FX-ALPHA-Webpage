@@ -59,12 +59,9 @@ Diese Webseite wird über Cloudflare Pages bereitgestellt. Anbieter ist Cloudfla
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO.
 **Weitere Informationen:** [www.cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/)
 
-## 6. Schriftarten (Google Fonts)
+## 6. Schriftarten (selbst gehostet)
 
-Diese Webseite nutzt Schriftarten von Google Fonts (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf der Webseite werden die Schriftarten von einem Google-Server geladen, wobei Ihre IP-Adresse an Google übertragen wird.
-
-**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung).
-**Hinweis:** Auf Wunsch werden wir die Schriftarten selbst hosten, sodass keine Datenübertragung an Google erfolgt. Bei Bedenken kontaktieren Sie uns gerne.
+Diese Webseite nutzt die Schriftarten Archivo, Manrope und JetBrains Mono. Diese Schriftarten werden **ausschließlich von unserem eigenen Server bereitgestellt** und nicht von externen Diensten wie Google Fonts geladen. Es findet beim Laden der Schriftarten keine Datenübertragung an Dritte statt.
 
 ## 7. Kontaktformular und E-Mail-Kontakt
 

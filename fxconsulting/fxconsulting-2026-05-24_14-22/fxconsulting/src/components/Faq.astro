@@ -1,0 +1,93 @@
+---
+import { t, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  items: Array<{ q: string; a: string }>;
+}
+const { lang, items } = Astro.props;
+
+// Schema.org FAQPage Markup für Google Featured Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a.replace(/<[^>]+>/g, '')
+    }
+  }))
+};
+---
+{items.length > 0 && (
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="faq-headline">{t(lang, 'sections.faq')}</h2>
+      <div class="faq-list">
+        {items.map((item, idx) => (
+          <details class="faq-item" open={idx === 0}>
+            <summary>
+              <span>{item.q}</span>
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer" set:html={item.a}></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+<style>
+  .faq-section { padding: 100px 32px; background: var(--bg, #fff); }
+  .faq-section .container { max-width: 880px; margin: 0 auto; }
+  .faq-headline {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 700;
+    color: var(--navy, #0a1e3a);
+    margin-bottom: 40px;
+    letter-spacing: -0.025em;
+  }
+  .faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line, #dbe3ed); }
+  .faq-item { border-bottom: 1px solid var(--line, #dbe3ed); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--navy, #0a1e3a);
+    letter-spacing: -0.01em;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-chevron {
+    font-size: 24px;
+    color: var(--blue, #2563eb);
+    flex-shrink: 0;
+    transition: transform .2s;
+    line-height: 1;
+  }
+  .faq-item[open] .faq-chevron { transform: rotate(45deg); }
+  .faq-answer {
+    padding: 0 0 24px;
+    color: var(--ink-2, #3d5275);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .faq-answer p { margin: 0 0 12px; }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  @media (max-width: 980px) {
+    .faq-section { padding: 60px 24px; }
+    .faq-item summary { font-size: 16px; padding: 20px 0; }
+  }
+</style>

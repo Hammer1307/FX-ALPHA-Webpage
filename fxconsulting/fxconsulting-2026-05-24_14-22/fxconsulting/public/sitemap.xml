@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fxalphaebusinessconsulting.com/de/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fxalphaebusinessconsulting.com/de/"/>
+  </url>
+
+  <!-- eTrading -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/etrading-beratung/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/etrading-beratung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/etrading-consulting/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/etrading-consulting/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/etrading-beratung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/etrading-consulting/"/>
+  </url>
+
+  <!-- FX Options -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/fx-options/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/fx-options/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/fx-options/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/fx-options/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/fx-options/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/fx-options/"/>
+  </url>
+
+  <!-- Private Equity (Priority-Page) -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/private-equity-fx/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/private-equity-fx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/private-equity-fx/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/private-equity-fx/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/private-equity-fx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/private-equity-fx/"/>
+  </url>
+
+  <!-- Vendor Selection -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/vendor-selection/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/vendor-selection/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/vendor-selection/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/vendor-selection/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/vendor-selection/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/vendor-selection/"/>
+  </url>
+
+  <!-- About / Über uns -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/ueber-uns/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/about/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/about/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/about/"/>
+  </url>
+
+  <!-- Contact / Kontakt -->
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/de/kontakt/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://fxalphaebusinessconsulting.com/en/contact/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fxalphaebusinessconsulting.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fxalphaebusinessconsulting.com/en/contact/"/>
+  </url>
+
+</urlset>

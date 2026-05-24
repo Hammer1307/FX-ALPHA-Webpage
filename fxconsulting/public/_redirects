@@ -1,0 +1,7 @@
+# www -> apex (oder umgekehrt) — aktivieren je nach Cloudflare-DNS-Setup
+# https://www.fxconsulting.de/* https://fxconsulting.de/:splat 301!
+
+# Legacy URLs von alter Gamma-Site -> neue Struktur
+# /old-page  /de/  301
+
+# Trailing slash consistency (Astro liefert mit /, Cloudflare normalisiert)

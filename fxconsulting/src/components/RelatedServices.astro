@@ -1,0 +1,109 @@
+---
+import { getEntry } from 'astro:content';
+import { pathMap, t, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  relatedKeys: string[];
+}
+const { lang, relatedKeys } = Astro.props;
+
+// Lade die Daten der verwandten Seiten aus der Content-Collection
+const items = await Promise.all(
+  relatedKeys.map(async (key) => {
+    // key entspricht dem Markdown-Dateinamen (slug)
+    const entry = await getEntry(lang, key);
+    if (!entry) return null;
+
+    // navKey ermitteln (z.B. 'etrading-beratung' → 'etrading')
+    const navKey = entry.data.navKey;
+    const url = navKey && pathMap[navKey] ? pathMap[navKey][lang] : '#';
+
+    return {
+      title: entry.data.headline.replace(/<[^>]+>/g, ''),
+      description: entry.data.description,
+      url
+    };
+  })
+);
+const valid = items.filter(Boolean);
+---
+{valid.length > 0 && (
+  <section class="related-services">
+    <div class="container">
+      <h2 class="related-headline">{t(lang, 'sections.related')}</h2>
+      <div class="related-grid">
+        {valid.map(item => (
+          <a href={item!.url} class="related-card">
+            <h3>{item!.title}</h3>
+            <p>{item!.description}</p>
+            <span class="related-more">{t(lang, 'cta.learnMore')} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-services {
+    padding: 100px 32px;
+    background: var(--bg-2, #f4f7fb);
+    border-top: 1px solid var(--line, #dbe3ed);
+  }
+  .related-services .container { max-width: 1280px; margin: 0 auto; }
+  .related-headline {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 700;
+    color: var(--navy, #0a1e3a);
+    margin-bottom: 40px;
+    letter-spacing: -0.025em;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .related-card {
+    background: #fff;
+    border: 1px solid var(--line, #dbe3ed);
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: all .25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .related-card:hover {
+    border-color: var(--blue, #2563eb);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(10,30,58,.08);
+  }
+  .related-card h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy, #0a1e3a);
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .related-card p {
+    color: var(--ink-2, #3d5275);
+    font-size: 14px;
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+  .related-more {
+    color: var(--blue, #2563eb);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .04em;
+  }
+  @media (max-width: 980px) {
+    .related-grid { grid-template-columns: 1fr; }
+    .related-services { padding: 60px 24px; }
+  }
+</style>

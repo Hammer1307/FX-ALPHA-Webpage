@@ -1,0 +1,9 @@
+# Force www → apex (or vice versa, depending on Cloudflare DNS setup)
+# Uncomment the line you want active:
+# https://www.fxconsulting.de/* https://fxconsulting.de/:splat 301!
+
+# Legacy URLs from old Gamma site → home (add specific ones here if needed)
+# /old-page  /  301
+
+# SPA-style fallback (only needed if you add client-side routing later)
+# /*    /index.html   200

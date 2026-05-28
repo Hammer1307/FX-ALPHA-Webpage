@@ -1,20 +1,9 @@
 # ─────────────────────────────────────────────────────────────
-# 301-Weiterleitungen auf die kanonische Hauptdomain fxconsulting.de
-# Bündelt Linkkraft und verhindert Duplicate Content über die 4 Domains.
-# Cloudflare wertet diese Datei am Edge aus (vor dem Worker/Asset-Serving).
+# Cloudflare WORKERS erlauben in _redirects NUR relative URLs.
+# Domainübergreifende 301s (.com / fxalpha.de / fxalphaebusinessconsulting.de
+# -> fxconsulting.de) sind hier NICHT möglich und werden stattdessen über
+# Cloudflare "Redirect Rules" im Dashboard pro Domain eingerichtet.
+#
+# Diese Datei bleibt bewusst ohne Regeln (nur relative Redirects wären erlaubt,
+# z. B. für Legacy-Pfade auf derselben Domain — aktuell keine nötig).
 # ─────────────────────────────────────────────────────────────
-
-# .com -> fxconsulting.de
-https://fxalphaebusinessconsulting.com/*   https://fxconsulting.de/:splat   301!
-https://www.fxalphaebusinessconsulting.com/*   https://fxconsulting.de/:splat   301!
-
-# fxalphaebusinessconsulting.de -> fxconsulting.de
-https://fxalphaebusinessconsulting.de/*   https://fxconsulting.de/:splat   301!
-https://www.fxalphaebusinessconsulting.de/*   https://fxconsulting.de/:splat   301!
-
-# fxalpha.de -> fxconsulting.de
-https://fxalpha.de/*   https://fxconsulting.de/:splat   301!
-https://www.fxalpha.de/*   https://fxconsulting.de/:splat   301!
-
-# www -> apex auf der Hauptdomain selbst
-https://www.fxconsulting.de/*   https://fxconsulting.de/:splat   301!

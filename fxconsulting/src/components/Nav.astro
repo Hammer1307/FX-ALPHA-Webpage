@@ -18,6 +18,7 @@ const links = [
 
 const homePath = pathMap.home[lang];
 const contactPath = pathMap.contact[lang];
+const menuLabel = lang === 'de' ? 'Menü' : 'Menu';
 ---
 <header class="nav">
   <div class="nav-inner">
@@ -35,7 +36,128 @@ const contactPath = pathMap.contact[lang];
 
       <LanguageSwitcher lang={lang} />
 
-      <a href={contactPath} class="cta">{t(lang, 'cta.contact')}</a>
+      <a href={contactPath} class="cta nav-cta-desktop">{t(lang, 'cta.contact')}</a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-label={menuLabel}
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </div>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label={menuLabel} hidden>
+    {links.map(link => (
+      <a href={link.path} class:list={[{ active: navKey === link.key }]}>{link.label}</a>
+    ))}
+    <a href={contactPath} class="mobile-cta">{t(lang, 'cta.contact')}</a>
+  </nav>
 </header>
+
+<style>
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    background: transparent;
+    border: 1px solid var(--line-2, #d4dbe6);
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .nav-toggle-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--navy, #0a1e3a);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 8px 24px 24px;
+    border-top: 1px solid var(--line, #dbe3ed);
+    background: rgba(255, 255, 255, .98);
+  }
+  .mobile-menu a {
+    padding: 16px 0;
+    font-family: var(--display, 'Archivo', sans-serif);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--navy, #0a1e3a);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line, #dbe3ed);
+  }
+  .mobile-menu a.active { color: var(--blue, #2563eb); }
+  .mobile-menu a.mobile-cta {
+    margin-top: 18px;
+    padding: 14px 22px;
+    background: var(--navy, #0a1e3a);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+  }
+
+  @media (max-width: 980px) {
+    .nav-toggle { display: flex; }
+    .nav-cta-desktop { display: none; }
+    .mobile-menu.open { display: flex; }
+  }
+</style>
+
+<script>
+  function initNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        menu.hidden = false;
+        menu.classList.add('open');
+      } else {
+        menu.classList.remove('open');
+        menu.hidden = true;
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
+    });
+
+    menu.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => setOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) setOpen(false);
+    });
+  }
+
+  initNav();
+  document.addEventListener('astro:page-load', initNav);
+</script>

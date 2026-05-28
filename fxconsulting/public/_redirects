@@ -1,7 +1,20 @@
-# www -> apex (oder umgekehrt) — aktivieren je nach Cloudflare-DNS-Setup
-# https://www.fxconsulting.de/* https://fxconsulting.de/:splat 301!
+# ─────────────────────────────────────────────────────────────
+# 301-Weiterleitungen auf die kanonische Hauptdomain fxconsulting.de
+# Bündelt Linkkraft und verhindert Duplicate Content über die 4 Domains.
+# Cloudflare wertet diese Datei am Edge aus (vor dem Worker/Asset-Serving).
+# ─────────────────────────────────────────────────────────────
 
-# Legacy URLs von alter Gamma-Site -> neue Struktur
-# /old-page  /de/  301
+# .com -> fxconsulting.de
+https://fxalphaebusinessconsulting.com/*   https://fxconsulting.de/:splat   301!
+https://www.fxalphaebusinessconsulting.com/*   https://fxconsulting.de/:splat   301!
 
-# Trailing slash consistency (Astro liefert mit /, Cloudflare normalisiert)
+# fxalphaebusinessconsulting.de -> fxconsulting.de
+https://fxalphaebusinessconsulting.de/*   https://fxconsulting.de/:splat   301!
+https://www.fxalphaebusinessconsulting.de/*   https://fxconsulting.de/:splat   301!
+
+# fxalpha.de -> fxconsulting.de
+https://fxalpha.de/*   https://fxconsulting.de/:splat   301!
+https://www.fxalpha.de/*   https://fxconsulting.de/:splat   301!
+
+# www -> apex auf der Hauptdomain selbst
+https://www.fxconsulting.de/*   https://fxconsulting.de/:splat   301!

@@ -33,11 +33,10 @@ const altLocale = lang === 'de' ? 'en_US' : 'de_DE';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a1e3a" />
-  <meta name="x-version" content="2026-05-25_09-20" />
+  {import.meta.env.DEV && <meta name="x-version" content="2026-05-25_09-20" />}
 
   <title>{title}</title>
   <meta name="description" content={description} />
-  {keywords && <meta name="keywords" content={keywords} />}
   <meta name="author" content="FX Alpha eBusiness Consulting GmbH" />
   <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
   <link rel="canonical" href={canonical} />
@@ -98,7 +97,7 @@ const altLocale = lang === 'de' ? 'en_US' : 'de_DE';
       { "@type": "Country", "name": "United Kingdom" },
       { "@type": "AdministrativeArea", "name": "Benelux" }
     ],
-    "knowsLanguage": ["de", "en", "it"],
+    "knowsLanguage": ["de", "en"],
     "email": "info@fxconsulting.de",
     "founder": [
       {

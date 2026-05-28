@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fxalphaebusinessconsulting.com/sitemap.xml
+# KI-Crawler explizit erlauben (B2B-Sichtbarkeit über AI-Suche)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://fxconsulting.de/sitemap.xml

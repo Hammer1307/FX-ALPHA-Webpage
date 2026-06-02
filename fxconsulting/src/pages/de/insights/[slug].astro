@@ -1,0 +1,246 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ContactCTA from '../../../components/ContactCTA.astro';
+import { t, pathMap } from '../../../i18n/ui';
+
+const lang = 'de' as const;
+
+export async function getStaticPaths() {
+  const entries = await getCollection('insightsDe', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const data = entry.data;
+
+// hreflang: zugehörigen Artikel in der anderen Sprache über denselben Slug finden
+const altCollection = await getCollection('insightsEn', ({ data }) => !data.draft);
+const altEntry = altCollection.find((e) => e.slug === entry.slug);
+const altUrlOverride = altEntry
+  ? new URL(`/en/insights/${altEntry.slug}/`, Astro.site).toString()
+  : null;
+
+const canonical = new URL(`/de/insights/${entry.slug}/`, Astro.site).toString();
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const authorName = data.author ?? 'FX Alpha eBusiness Consulting GmbH';
+
+// Article + Breadcrumb Schema
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': data.title,
+  'description': data.description,
+  'datePublished': data.date,
+  'inLanguage': 'de',
+  'author': { '@type': data.author ? 'Person' : 'Organization', 'name': authorName },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'FX Alpha eBusiness Consulting GmbH',
+    'logo': { '@type': 'ImageObject', 'url': new URL('/assets/logo.webp', Astro.site).toString() }
+  },
+  'mainEntityOfPage': canonical,
+  'image': new URL('/assets/og-image.png', Astro.site).toString()
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', position: 1, name: 'Insights', item: new URL('/de/insights/', Astro.site).toString() },
+    { '@type': 'ListItem', position: 2, name: data.title, item: canonical }
+  ]
+};
+---
+<BaseLayout
+  title={data.seoTitle ?? `${data.title} | FX Alpha`}
+  description={data.description}
+  keywords={data.keywords}
+  lang={lang}
+  navKey="insights"
+  altUrlOverride={altUrlOverride}
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)}></script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(breadcrumbSchema)}></script>
+
+  <article class="insight-article">
+    <div class="container">
+      <a href={pathMap.insights[lang]} class="insight-back">← {t(lang, 'insights.back')}</a>
+
+      <div class="insight-head">
+        <div class="insight-headmeta">
+          <span class="insight-type">{data.type}</span>
+          <time datetime={data.date}>{t(lang, 'insights.published')} {fmtDate(data.date)}</time>
+          {data.readingTime && <span class="insight-rt">· {data.readingTime}</span>}
+        </div>
+        <h1>{data.title}</h1>
+        {data.teaser && <p class="insight-lede">{data.teaser}</p>}
+        <p class="insight-byline">{authorName}</p>
+      </div>
+
+      <div class="insight-body">
+        <Content />
+      </div>
+
+      {data.pdf && (
+        <a href={data.pdf} class="insight-download" download>
+          <span class="insight-download-icon" aria-hidden="true">↓</span>
+          <span class="insight-download-text">
+            <strong>{t(lang, 'insights.download')}</strong>
+            {data.pdfNote && <span class="insight-download-note">{data.pdfNote}</span>}
+          </span>
+        </a>
+      )}
+
+      <a href={pathMap.insights[lang]} class="insight-back bottom">← {t(lang, 'insights.back')}</a>
+    </div>
+  </article>
+
+  <ContactCTA lang={lang} />
+</BaseLayout>
+
+<style>
+  .insight-article {
+    padding: 140px 32px 90px;
+    background: var(--bg, #fff);
+  }
+  .insight-article .container { max-width: 760px; margin: 0 auto; }
+  .insight-back {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--blue, #2563eb);
+    text-decoration: none;
+    margin-bottom: 36px;
+  }
+  .insight-back.bottom { margin: 56px 0 0; }
+  .insight-back:hover { text-decoration: underline; }
+  .insight-download {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 48px 0 0;
+    padding: 24px 28px;
+    background: var(--bg-2, #f4f7fb);
+    border: 1px solid var(--line, #dbe3ed);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .insight-download:hover {
+    border-color: var(--blue, #2563eb);
+    background: #fff;
+    transform: translateY(-2px);
+  }
+  .insight-download-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--navy, #0a1e3a);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .insight-download-text { display: flex; flex-direction: column; gap: 3px; }
+  .insight-download-text strong {
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    color: var(--navy, #0a1e3a);
+  }
+  .insight-download-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-3, #7388a8);
+  }
+  .insight-head { margin-bottom: 48px; }
+  .insight-headmeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-3, #7388a8);
+  }
+  .insight-type {
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--blue, #2563eb);
+    border: 1px solid var(--line-2, #c4d0de);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+  .insight-head h1 {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--navy, #0a1e3a);
+    margin: 0 0 22px;
+  }
+  .insight-lede {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-2, #3d5275);
+    margin: 0 0 18px;
+  }
+  .insight-byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-3, #7388a8);
+    margin: 0;
+  }
+  .insight-body {
+    font-size: 17px;
+    line-height: 1.78;
+    color: var(--ink-2, #3d5275);
+  }
+  .insight-body :global(h2) {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--navy, #0a1e3a);
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 52px 0 18px;
+  }
+  .insight-body :global(h3) {
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy, #0a1e3a);
+    margin: 32px 0 12px;
+  }
+  .insight-body :global(p) { margin: 0 0 20px; }
+  .insight-body :global(strong) { color: var(--navy, #0a1e3a); font-weight: 600; }
+  .insight-body :global(ul), .insight-body :global(ol) { margin: 0 0 20px; padding-left: 24px; }
+  .insight-body :global(li) { margin-bottom: 8px; }
+  .insight-body :global(blockquote) {
+    margin: 28px 0;
+    padding: 8px 0 8px 24px;
+    border-left: 3px solid var(--blue, #2563eb);
+    color: var(--navy, #0a1e3a);
+    font-style: italic;
+  }
+  .insight-body :global(a) {
+    color: var(--blue, #2563eb);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(37,99,235,.3);
+  }
+  .insight-body :global(a:hover) { border-bottom-color: var(--blue, #2563eb); }
+  @media (max-width: 980px) {
+    .insight-article { padding: 110px 24px 70px; }
+    .insight-lede { font-size: 18px; }
+  }
+</style>

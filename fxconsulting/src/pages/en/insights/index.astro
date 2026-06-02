@@ -1,0 +1,151 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/Hero.astro';
+import ContactCTA from '../../../components/ContactCTA.astro';
+import { t } from '../../../i18n/ui';
+
+const lang = 'en' as const;
+
+const entries = (await getCollection('insightsEn', ({ data }) => !data.draft))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout
+  title="Insights & White Papers — FX, eTrading & Hedging | FX Alpha"
+  description="White papers and articles from FX Alpha on FX markets, electronic trading, deal hedging and regulation — drawn from three decades of trading-floor and eFX practice."
+  keywords="FX white paper, FX insights, eTrading analysis, deal-contingent hedging, FX market commentary, FX regulation"
+  lang={lang}
+  navKey="insights"
+>
+  <Hero eyebrow={t(lang, 'insights.eyebrow')} headline={t(lang, 'insights.headline')} subheadline={t(lang, 'insights.sub')} />
+
+  <section class="insights-list">
+    <div class="container">
+      {entries.length === 0 ? (
+        <p class="insights-empty">{t(lang, 'insights.empty')}</p>
+      ) : (
+        <div class="insights-grid">
+          {entries.map((entry) => (
+            <a href={`/en/insights/${entry.slug}/`} class="insight-card">
+              <div class="insight-meta">
+                <span class="insight-type">{entry.data.type}</span>
+                <time datetime={entry.data.date}>{fmtDate(entry.data.date)}</time>
+              </div>
+              <h2>{entry.data.title}</h2>
+              <p class="insight-teaser">{entry.data.teaser}</p>
+              <div class="insight-foot">
+                {entry.data.readingTime && <span class="insight-rt">{entry.data.readingTime}</span>}
+                <span class="insight-more">{t(lang, 'insights.readMore')} →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <ContactCTA lang={lang} />
+</BaseLayout>
+
+<style>
+  .insights-list {
+    padding: 60px 32px 100px;
+    background: var(--bg, #fff);
+  }
+  .insights-list .container { max-width: 1100px; margin: 0 auto; }
+  .insights-empty {
+    text-align: center;
+    color: var(--ink-2, #3d5275);
+    font-size: 18px;
+    padding: 40px 0 60px;
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .insight-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line, #dbe3ed);
+    border-radius: 14px;
+    padding: 32px 30px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .insight-card:hover {
+    border-color: var(--blue, #2563eb);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(10,30,58,.09);
+  }
+  .insight-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .insight-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--blue, #2563eb);
+    border: 1px solid var(--line-2, #c4d0de);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+  .insight-meta time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-3, #7388a8);
+    letter-spacing: .02em;
+  }
+  .insight-card h2 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--navy, #0a1e3a);
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+  }
+  .insight-teaser {
+    color: var(--ink-2, #3d5275);
+    font-size: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0 0 22px;
+  }
+  .insight-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line, #dbe3ed);
+  }
+  .insight-rt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-3, #7388a8);
+  }
+  .insight-more {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    color: var(--blue, #2563eb);
+    margin-left: auto;
+  }
+  @media (max-width: 860px) {
+    .insights-grid { grid-template-columns: 1fr; }
+    .insights-list { padding: 40px 24px 80px; }
+  }
+</style>

@@ -13,16 +13,19 @@ interface Props {
   navKey?: string;
   ogImage?: string;
   noindex?: boolean;
+  altUrlOverride?: string | null;
 }
 
-const { title, description, keywords, lang, navKey, ogImage = '/assets/og-image.png', noindex = false } = Astro.props;
+const { title, description, keywords, lang, navKey, ogImage = '/assets/og-image.png', noindex = false, altUrlOverride } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 // hreflang: ermittle die gleiche Page in der anderen Sprache, wenn vorhanden
 const altLang: Lang = lang === 'de' ? 'en' : 'de';
 const currentPath = Astro.url.pathname.replace(/\/$/, '') + '/';
 const matchedKey = Object.entries(pathMap).find(([_, paths]) => paths[lang] === currentPath)?.[0];
-const altUrl = matchedKey ? new URL(pathMap[matchedKey][altLang], Astro.site).toString() : null;
+const altFromMap = matchedKey ? new URL(pathMap[matchedKey][altLang], Astro.site).toString() : null;
+// Explizit übergebener Override (z. B. Insights-Artikel) hat Vorrang.
+const altUrl = altUrlOverride !== undefined ? altUrlOverride : altFromMap;
 
 const ogLocale = lang === 'de' ? 'de_DE' : 'en_US';
 const altLocale = lang === 'de' ? 'en_US' : 'de_DE';

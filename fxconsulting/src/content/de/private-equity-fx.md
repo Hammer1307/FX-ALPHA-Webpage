@@ -1,10 +1,10 @@
 ---
-title: "FX-Beratung Private Equity | Deal-Hedging & Sign-to-Close"
-description: "Unabhängige FX-Beratung für Private Equity. Deal-Contingent Hedging, Sign-to-Close, Cross-Border M&A, Exit-Repatriation. Spezialisiert auf DACH-PE."
-keywords: "Private Equity FX, Deal-Contingent Forward, Deal-Hedging, Sign-to-Close Hedging, FX M&A, Cross-Border Akquisition, FX Beratung Private Equity, Exit Repatriation, Währungsabsicherung Übernahme"
+title: "FX-Beratung Private Equity | Deal-Hedging & FX-Due-Diligence"
+description: "Unabhängige FX-Beratung für Private Equity: Deal-Contingent Hedging, Sign-to-Close, Cross-Border M&A — und FX-Due-Diligence beim Kauf von FX-Software-, Trading- und Structuring-Unternehmen."
+keywords: "Private Equity FX, Deal-Contingent Forward, Deal-Hedging, Sign-to-Close Hedging, FX M&A, Cross-Border Akquisition, FX Beratung Private Equity, Exit Repatriation, FX Due Diligence, Commercial Due Diligence FX, Target-Analyse FX, FX Software M&A, technische Due Diligence FX-Plattform"
 eyebrow: "05 / Private Equity Advisory"
 headline: "FX-Beratung für <span class='accent'>Private Equity</span>."
-subheadline: "Deal-Hedging, Sign-to-Close, Cross-Border-M&A und Exit-Repatriation — wir kennen die FX-Mechanik hinter jedem Schritt im Deal-Lebenszyklus."
+subheadline: "Deal-Hedging, Sign-to-Close, Cross-Border-M&A, Exit-Repatriation — und FX-Due-Diligence beim Kauf von FX-Unternehmen. Wir kennen die FX-Mechanik hinter jedem Schritt im Deal-Lebenszyklus."
 pageType: "service"
 navKey: "privateEquity"
 related:
@@ -22,6 +22,8 @@ faq:
     a: "<p>So früh wie möglich — am besten in der Due-Diligence-Phase. Die FX-Exposure und damit der nötige Hedge ist eine direkte Funktion der Deal-Struktur (Kaufpreis-Currency, Earn-out-Vereinbarungen, Finanzierungsstruktur). Wenn Sie diese Elemente FX-bewusst gestalten, sparen Sie später Hedging-Kosten und reduzieren Komplexität.</p><p>In der Praxis kommen wir oft erst ins Spiel, wenn der Deal schon strukturiert ist und das Hedge ad hoc abgeschlossen werden muss. Auch das funktioniert — aber der Hebel ist kleiner.</p>"
   - q: "Wie ist der typische Ablauf einer Zusammenarbeit?"
     a: "<p>Erstgespräch (30 Minuten, unverbindlich). Wenn beide Seiten Sinn sehen, folgt eine kurze Phase mit Zugriff auf Deal-Unterlagen unter NDA — daraus entsteht ein Memo mit FX-Exposure-Analyse, Strategie-Optionen und Banken-Empfehlungen. Anschließend begleiten wir die Umsetzung bis zum Closing, einschließlich Pricing-Calls mit den Counterparties und Dokumentations-Review.</p><p>Für Häuser mit kontinuierlichem Deal-Flow strukturieren wir oft Rahmenvereinbarungen, die schneller pro Deal aktivierbar sind.</p>"
+  - q: "Unterstützen Sie auch beim Kauf von Unternehmen aus dem FX-Bereich?"
+    a: "<p>Ja. Wenn Ihr Akquisitionsziel selbst im FX-Geschäft tätig ist — FX-Software, FX-Trading, Structuring oder Solutions — bringen wir die Sektor-Expertise ins Deal-Team, die eine klassische Due Diligence nicht abdeckt. Wir bewerten die FX-Plattform technisch (Pricing-Engines, Liquiditätsaggregation, Risiko-Systeme), prüfen Ertragsqualität und Wettbewerbsposition des Geschäftsmodells und identifizieren regulatorische Risiken und Lizenz-Abhängigkeiten, die den Deal-Wert materiell beeinflussen.</p><p>Damit beantworten wir die Frage, die über den Deal-Wert entscheidet: Tragen Technologie und Geschäftsmodell des Targets im FX-Markt von morgen? Auf Wunsch begleiten wir auch die Post-Merger-Integration und die Bewertung weiterer FX-Add-ons.</p>"
 ---
 
 ## Was wir für Private-Equity-Häuser tun
@@ -41,6 +43,24 @@ Unsere Arbeit ist unabhängig. Wir verkaufen weder Produkte noch erhalten wir Pr
 **Exit-Repatriation und Verkaufserlös-Hedging.** Beim Exit eines Investments in fremder Währung entscheidet das FX-Management mit darüber, was beim Investor in der Fondswährung ankommt. Kurzfristige Forwards, optional kombiniert mit Optionen, sichern das Closing-Datum ab — wir kennen die typischen Fallstricke wie verschobene Closings oder unsichere Verkaufspreise.
 
 **Fonds-Struktur und FX im Vehikel.** Bei Fonds mit gemischten Investor-Klassen (Euro-, USD-, GBP-LPs) ist FX-Management bereits auf Fondsebene relevant. Wir beraten zu Share-Class-Hedging und FX-Reporting für die LP-Kommunikation.
+
+## FX-Due-Diligence: wenn das Target selbst FX macht
+
+Ein zweiter, eigenständiger Bereich, in dem wir Private-Equity-Häuser unterstützen: wenn das **Akquisitionsziel selbst im FX-Geschäft tätig ist**. Beim Kauf von Unternehmen aus den Bereichen FX-Software, FX-Trading, FX-Structuring oder FX-Solutions ist die entscheidende Frage selten rein finanziell — sie ist technisch und marktstrukturell. Genau hier bringen wir das Wissen ein, das ein klassisches Due-Diligence-Team nicht hat.
+
+Wir agieren als Ihr **FX-Fachberater im Deal-Team**: Wir bewerten, was das Target wirklich wert ist, wo die technischen und regulatorischen Risiken liegen und ob das Geschäftsmodell im FX-Markt von morgen trägt.
+
+**Technische Due Diligence der FX-Plattform.** Pricing-Engines, Liquiditätsaggregation, Connectivity, Latenz, Risikomanagement-Systeme: Wir prüfen die Architektur des Targets auf Substanz statt Marketing — was ist proprietär, was zugekauft, was technische Schuld, und was lässt sich nach dem Closing tatsächlich skalieren.
+
+**Bewertung des FX-Geschäftsmodells.** Wie verdient das Target im FX-Markt — Spread-Capture, Internalisierung, STP-Margen, Mehrwertdienste? Wir analysieren die Ertragsqualität, die Abhängigkeit von einzelnen Liquiditätsgebern oder Kunden und die Wettbewerbsposition gegenüber Banken und etablierten Plattformen.
+
+**Regulatorik und Counterparty-Setup.** FX-nahe Geschäftsmodelle bewegen sich in einem dichten regulatorischen Umfeld (MiFID II, EMIR, BaFin, je nach Modell auch Zahlungsdienste-Lizenzen). Wir identifizieren regulatorische Risiken und Lizenz-Abhängigkeiten, die den Deal-Wert materiell beeinflussen können.
+
+**Markt- und Technologietrends.** Wir ordnen das Target in die Entwicklung des FX-Markts ein — eFX, algorithmische Ausführung, Crypto-FX, Stablecoins, Embedded FX — und sagen Ihnen, ob Technologie und Team das Geschäft über Ihren Investment-Horizont tragen.
+
+**Post-Merger und Buy-and-Build.** Nach dem Closing unterstützen wir bei der Integration, der Vendor-Konsolidierung und — bei Buy-and-Build-Thesen — bei der Bewertung weiterer FX-Targets als Add-ons.
+
+Diese Sektor-Expertise ist selten: Wir kombinieren drei Jahrzehnte aktiver FX-Markt- und Technologie-Erfahrung mit dem Verständnis für die Fragen, die ein Investor beim Kauf stellen muss. Sie bekommen einen Berater, der die Motorhaube des Targets öffnet und einordnet, was im Datenraum steht.
 
 ## Was uns von Alternativen unterscheidet
 

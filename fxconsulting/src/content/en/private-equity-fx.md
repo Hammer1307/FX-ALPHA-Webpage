@@ -1,10 +1,10 @@
 ---
-title: "FX Advisory for Private Equity | Deal-Contingent Hedging"
-description: "Independent FX advisory for private equity. Deal-contingent hedging, sign-to-close, cross-border M&A, exit repatriation. Specialised in DACH PE."
-keywords: "private equity FX, deal-contingent hedging, deal contingent forward, sign-to-close hedging, FX M&A, cross-border acquisition, FX advisory private equity, exit repatriation, currency hedge acquisition"
+title: "FX Advisory for Private Equity | Deal Hedging & FX Due Diligence"
+description: "Independent FX advisory for private equity: deal-contingent hedging, sign-to-close, cross-border M&A — and FX due diligence when acquiring FX software, trading and structuring businesses."
+keywords: "private equity FX, deal-contingent hedging, deal contingent forward, sign-to-close hedging, FX M&A, cross-border acquisition, FX advisory private equity, exit repatriation, FX due diligence, commercial due diligence FX, FX target analysis, FX software M&A, technical due diligence FX platform"
 eyebrow: "05 / Private Equity Advisory"
 headline: "FX advisory for <span class='accent'>private equity</span>."
-subheadline: "Deal hedging, sign-to-close, cross-border M&A and exit repatriation — we understand the FX mechanics behind every step of the deal lifecycle."
+subheadline: "Deal hedging, sign-to-close, cross-border M&A, exit repatriation — and FX due diligence when acquiring FX businesses. We understand the FX mechanics behind every step of the deal lifecycle."
 pageType: "service"
 navKey: "privateEquity"
 related:
@@ -22,6 +22,8 @@ faq:
     a: "<p>As early as possible — ideally in due diligence. The FX exposure, and the hedge it requires, is a direct function of deal structure (purchase price currency, earn-out arrangements, financing structure). If you design these elements with FX in mind, you save hedging costs later and reduce complexity.</p><p>In practice we often come in once the deal is already structured and the hedge needs to be placed ad hoc. That works too — but the leverage is smaller.</p>"
   - q: "What does a typical engagement look like?"
     a: "<p>Initial call (30 minutes, no commitment). If both sides see value, a short phase follows with access to deal documents under NDA — from which we produce a memo with FX exposure analysis, strategy options and counterparty recommendations. We then support execution through closing, including pricing calls with counterparties and documentation review.</p><p>For houses with continuous deal flow we often set up framework agreements that activate faster per deal.</p>"
+  - q: "Do you also support the acquisition of FX-sector companies?"
+    a: "<p>Yes. When your acquisition target itself operates in the FX business — FX software, FX trading, structuring or solutions — we bring the sector expertise a conventional due diligence doesn't cover. We assess the FX platform technically (pricing engines, liquidity aggregation, risk systems), examine the earnings quality and competitive position of the business model, and identify regulatory risks and licence dependencies that materially affect deal value.</p><p>That answers the question that drives deal value: will the target's technology and business model hold up in tomorrow's FX market? On request we also support post-merger integration and the assessment of further FX add-ons.</p>"
 ---
 
 ## What we do for private equity houses
@@ -41,6 +43,24 @@ Our work is independent. We don't sell products and we don't receive commissions
 **Exit repatriation and sale-proceeds hedging.** When exiting a foreign-currency investment, FX management partly determines what arrives in the fund's home currency. Short-dated forwards, possibly combined with options, lock in the closing date — we know the typical pitfalls like postponed closings or uncertain sale prices.
 
 **Fund structure and FX at the vehicle level.** For funds with mixed investor classes (euro, USD, GBP LPs), FX management is already relevant at fund level. We advise on share-class hedging and FX reporting for LP communication.
+
+## FX due diligence: when the target itself does FX
+
+A second, distinct area where we support private equity houses: when the **acquisition target itself operates in the FX business**. When you buy companies in FX software, FX trading, FX structuring or FX solutions, the decisive question is rarely purely financial — it's technical and market-structural. This is exactly where we bring knowledge a conventional due diligence team doesn't have.
+
+We act as your **FX subject-matter expert inside the deal team**: we assess what the target is really worth, where the technical and regulatory risks sit, and whether the business model will hold up in the FX market of tomorrow.
+
+**Technical due diligence of the FX platform.** Pricing engines, liquidity aggregation, connectivity, latency, risk-management systems: we examine the target's architecture for substance rather than marketing — what's proprietary, what's bought-in, what's technical debt, and what can actually scale after closing.
+
+**Assessing the FX business model.** How does the target earn in the FX market — spread capture, internalisation, STP margins, value-added services? We analyse earnings quality, dependence on individual liquidity providers or clients, and competitive position versus banks and established platforms.
+
+**Regulation and counterparty setup.** FX-related business models operate in a dense regulatory environment (MiFID II, EMIR, BaFin, and depending on the model, payment-services licences). We identify regulatory risks and licence dependencies that can materially affect deal value.
+
+**Market and technology trends.** We position the target within the evolution of the FX market — eFX, algorithmic execution, crypto FX, stablecoins, embedded FX — and tell you whether the technology and the team can carry the business across your investment horizon.
+
+**Post-merger and buy-and-build.** After closing we support integration, vendor consolidation and — for buy-and-build theses — the assessment of further FX targets as add-ons.
+
+This sector expertise is rare: we combine three decades of active FX market and technology experience with an understanding of the questions an investor must ask when buying. You get an advisor who opens the target's bonnet and makes sense of what's in the data room.
 
 ## What sets us apart
 

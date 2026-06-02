@@ -17,6 +17,7 @@ export const pathMap: Record<string, { de: string; en: string }> = {
   options:            { de: '/de/fx-options/',            en: '/en/fx-options/' },
   privateEquity:      { de: '/de/private-equity-fx/',     en: '/en/private-equity-fx/' },
   vendorSelection:    { de: '/de/vendor-selection/',      en: '/en/vendor-selection/' },
+  insights:           { de: '/de/insights/',              en: '/en/insights/' },
   about:              { de: '/de/ueber-uns/',             en: '/en/about/' },
   contact:            { de: '/de/kontakt/',               en: '/en/contact/' },
   imprint:            { de: '/de/impressum/',             en: '/en/imprint/' },
@@ -35,6 +36,7 @@ export const ui = {
     'nav.options': 'FX Options',
     'nav.pe': 'Private Equity',
     'nav.vendor': 'Vendor Selection',
+    'nav.insights': 'Insights',
     'nav.about': 'Über uns',
     'nav.contact': 'Kontakt',
     'cta.contact': 'Kontakt aufnehmen',
@@ -74,7 +76,16 @@ export const ui = {
     'sections.related': 'Verwandte Leistungen',
     'sections.faq': 'Häufige Fragen',
     'sections.contact-cta-headline': 'Klingt nach Ihrer Situation?',
-    'sections.contact-cta-text': 'Lassen Sie uns 30 Minuten unverbindlich sprechen. Wir hören zu, geben eine erste Einschätzung — und wenn wir nicht der richtige Partner sind, sagen wir das auch.'
+    'sections.contact-cta-text': 'Lassen Sie uns 30 Minuten unverbindlich sprechen. Wir hören zu, geben eine erste Einschätzung — und wenn wir nicht der richtige Partner sind, sagen wir das auch.',
+    'insights.eyebrow': '06 / Insights',
+    'insights.headline': 'Insights & <span class="accent">White Paper</span>.',
+    'insights.sub': 'Analysen, Fachbeiträge und White Paper zu FX-Markt, Electronic Trading, Hedging und Regulatorik — aus der Praxis von zwei Trading-Floor-Veteranen.',
+    'insights.readMore': 'Weiterlesen',
+    'insights.back': 'Alle Insights',
+    'insights.empty': 'In Kürze verfügbar. Melden Sie sich, wenn Sie zu einem Thema vorab sprechen möchten.',
+    'insights.published': 'Veröffentlicht',
+    'insights.breadcrumb': 'Insights',
+    'insights.download': 'Vollständiges Briefing als PDF'
   },
   en: {
     'site.name': 'FX Alpha',
@@ -84,6 +95,7 @@ export const ui = {
     'nav.options': 'FX Options',
     'nav.pe': 'Private Equity',
     'nav.vendor': 'Vendor Selection',
+    'nav.insights': 'Insights',
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'cta.contact': 'Get in touch',
@@ -123,7 +135,16 @@ export const ui = {
     'sections.related': 'Related services',
     'sections.faq': 'Frequently asked questions',
     'sections.contact-cta-headline': 'Sounds like your situation?',
-    'sections.contact-cta-text': 'Let\'s have a 30-minute conversation, no commitment. We listen, give an initial view — and if we\'re not the right partner, we\'ll say so.'
+    'sections.contact-cta-text': 'Let\'s have a 30-minute conversation, no commitment. We listen, give an initial view — and if we\'re not the right partner, we\'ll say so.',
+    'insights.eyebrow': '06 / Insights',
+    'insights.headline': 'Insights & <span class="accent">white papers</span>.',
+    'insights.sub': 'Analysis, articles and white papers on FX markets, electronic trading, hedging and regulation — from two trading-floor veterans.',
+    'insights.readMore': 'Read more',
+    'insights.back': 'All insights',
+    'insights.empty': 'Coming soon. Get in touch if you\'d like to discuss a topic ahead of publication.',
+    'insights.published': 'Published',
+    'insights.breadcrumb': 'Insights',
+    'insights.download': 'Download the full briefing (PDF)'
   }
 } as const;
 

@@ -54,7 +54,34 @@ const pageSchema = z.object({
   })).optional()
 });
 
+// Schema für Insights / White Paper (eigene Collection pro Sprache)
+const insightSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  keywords: z.string().optional(),
+  // Typ-Label für Karte & Hero, z. B. "White Paper", "Analyse", "Briefing"
+  type: z.string().default('White Paper'),
+  // Veröffentlichungsdatum im ISO-Format (YYYY-MM-DD)
+  date: z.string(),
+  // optionale Lesezeit-Angabe, z. B. "8 Min." / "8 min read"
+  readingTime: z.string().optional(),
+  // optionaler Autor (sonst Organisation)
+  author: z.string().optional(),
+  // Teaser für die Übersichtskarte
+  teaser: z.string(),
+  // optionaler, kürzerer SEO-Title (sonst wird title verwendet)
+  seoTitle: z.string().optional(),
+  // optionaler PDF-Download (Pfad relativ zu /public, z. B. /insights/datei.pdf)
+  pdf: z.string().optional(),
+  // optionales Label/Hinweis zum PDF, z. B. "11 Seiten · Deutsch"
+  pdfNote: z.string().optional(),
+  // Entwurf: wird nicht ausgegeben, solange true
+  draft: z.boolean().optional()
+});
+
 export const collections = {
   de: defineCollection({ type: 'content', schema: pageSchema }),
-  en: defineCollection({ type: 'content', schema: pageSchema })
+  en: defineCollection({ type: 'content', schema: pageSchema }),
+  insightsDe: defineCollection({ type: 'content', schema: insightSchema }),
+  insightsEn: defineCollection({ type: 'content', schema: insightSchema })
 };

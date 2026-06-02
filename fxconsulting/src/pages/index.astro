@@ -1,9 +1,13 @@
 ---
 // Sprachweiche auf der Root-URL.
 // Erkennt Browser-Sprache und leitet auf /de/ oder /en/ weiter.
-// Canonical zeigt auf die kanonische Hauptdomain (fxalphaebusinessconsulting.com/de/)
-// da fxconsulting.de als Alias-Domain behandelt wird.
-const canonicalBase = 'https://fxalphaebusinessconsulting.com/';
+// Kanonische Domain wird aus astro.config.mjs (Astro.site) abgeleitet —
+// KEINE fest verdrahtete Fremddomain mehr. Das Canonical der Root verweist
+// auf die deutsche Hauptseite /de/ (x-default); dorthin konsolidiert auch
+// der 301 in public/_redirects.
+const siteUrl = Astro.site ?? new URL('https://fxconsulting.de/');
+const deUrl = new URL('/de/', siteUrl).toString();
+const enUrl = new URL('/en/', siteUrl).toString();
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -12,10 +16,10 @@ const canonicalBase = 'https://fxalphaebusinessconsulting.com/';
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FX Alpha — Independent Advisory for FX Trading & Electronic FX</title>
 <meta name="description" content="Specialist FX advisory for banks, funds, private equity and FinTechs. eTrading, options, vendor selection, deal hedging." />
-<link rel="canonical" href={`${canonicalBase}de/`} />
-<link rel="alternate" hreflang="de" href={`${canonicalBase}de/`} />
-<link rel="alternate" hreflang="en" href={`${canonicalBase}en/`} />
-<link rel="alternate" hreflang="x-default" href={`${canonicalBase}de/`} />
+<link rel="canonical" href={deUrl} />
+<link rel="alternate" hreflang="de" href={deUrl} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="x-default" href={deUrl} />
 <link rel="icon" type="image/png" href="/assets/favicon.png" />
 <meta name="robots" content="index,follow" />
 <style>

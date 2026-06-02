@@ -1,9 +1,20 @@
 # ─────────────────────────────────────────────────────────────
-# Cloudflare WORKERS erlauben in _redirects NUR relative URLs.
-# Domainübergreifende 301s (.com / fxalpha.de / fxalphaebusinessconsulting.de
-# -> fxconsulting.de) sind hier NICHT möglich und werden stattdessen über
-# Cloudflare "Redirect Rules" im Dashboard pro Domain eingerichtet.
+# Cloudflare Pages/Workers erlauben in _redirects NUR pfadbasierte,
+# host-INTERNE 301s (relative Ziele auf derselben Domain).
 #
-# Diese Datei bleibt bewusst ohne Regeln (nur relative Redirects wären erlaubt,
-# z. B. für Legacy-Pfade auf derselben Domain — aktuell keine nötig).
+# NICHT hier möglich (und daher über Cloudflare-Dashboard zu lösen):
+#   - http  -> https        => SSL/TLS > Edge Certificates > "Always Use HTTPS" = ON
+#   - www   -> apex (non-www)=> Rules > Redirect Rules (siehe README/Übergabe)
+#   - andere Domains (.com / fxalpha.de / fxalphaebusinessconsulting.de)
+#                            => Redirect Rules pro Domain -> https://fxconsulting.de
+# Hinweis: Da alle Seiten ihr Canonical aus astro.config.mjs (site:
+# https://fxconsulting.de) ableiten, ist das Konsolidierungs-SIGNAL bereits
+# unabhängig vom aufrufenden Host korrekt; die Dashboard-301s ergänzen die
+# saubere Server-Weiterleitung.
 # ─────────────────────────────────────────────────────────────
+
+# Root-URL auf die deutsche Hauptseite (x-default) konsolidieren.
+# Greift, sofern die Plattform den Redirect vor der statischen index.html
+# auswertet; andernfalls übernimmt die nun selbst-kanonisierende Splash-Seite
+# (src/pages/index.astro) die Konsolidierung.
+/    /de/    301
